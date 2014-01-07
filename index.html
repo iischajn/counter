@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Counter</title>
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/foundation.css">
+	<link rel="stylesheet" href="css/app.css">
+
+	<script src="js/modernizr.js"></script>
+</head>
+<body>
+	<div class="off-canvas-wrap">
+		<div class="inner-wrap">
+			<nav class="top-bar" data-topbar>
+				<ul class="title-area">
+					<li class="name">
+						<h1><a href="#">Counter</a></h1>
+					</li>
+					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+				</ul>
+			</nav>
+			<section role="main">
+				<div class="row display">
+					<br>
+					<div class="small-12 large-centered small-centered columns">
+						<label>Text:</label>
+						<textarea id="textarea" placeholder="Enter here..."></textarea>
+					</div>
+					<div class="small-12 large-centered small-centered columns clearfix">
+						<div>
+						</div>
+						<a id="clear" class="button right">clear</a>
+						<a href="#" id="analyse" class="button left">analyse...</a>
+						<ul id="sort" class="button-group radius left">
+							<li><a href="#" class="button alert" data-sort="times">times</a></li>
+							<li><a href="#" class="button" data-sort="len">length</a></li>
+						</ul>
+					</div>
+					<div id="result" class="small-12 large-centered small-centered columns">
+						<h3>Result:</h3>
+						<table>
+							<thead>
+								<tr>
+									<th>word</th>
+									<th>times</th>
+									<th>length</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.tmpl.js"></script>
+	<script src="js/foundation.js"></script>
+	<script src="js/counter.js"></script>
+	<script>
+		$(document).foundation();
+	</script>
+</body>
+</html>
