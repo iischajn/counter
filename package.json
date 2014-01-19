@@ -1,5 +1,5 @@
 {
-  "name": "counter",
+  "name": "nowkey",
   "version": "1.0.3",
   "devDependencies": {
     "node-sass": "~0.7.0",
@@ -9,6 +9,10 @@
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-qunit": "~0.3.0"
+    "grunt-contrib-qunit": "~0.3.0",
+    "express": "3.x",
+    "ejs": "~0.8.5",
+    "cradle": "~0.6.6",
+    "grunt-contrib-cssmin": "~0.7.0"
   }
 }
