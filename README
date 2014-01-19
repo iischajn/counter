@@ -3,5 +3,11 @@ init
 npm install -> package.json
 node -> server.js
 grunt -> Gruntfile.js -> config.json -> [ project, path ] 
+----
+git add .
+git commit -a -m 'ev1.2'
+git push
+
+pull you
 
 
