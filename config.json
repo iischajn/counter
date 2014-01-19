@@ -1,0 +1,23 @@
+{
+	"projects":{
+		"counter":{
+			"name":"counter",
+			"version":"0.0.1",
+			"pages":{
+				"index":{
+					"html":"index",
+					"css":["index.css"],
+					"js":["arith.js","analy.js","operation.js","page.js","index.js"]
+				}
+			}
+		}
+	},
+	"path":{
+		"build":"build",
+		"dev":"dev",
+		"css":"res/css",
+		"js":"res/js",
+		"views":"views",
+		"public":"public"
+	}
+}
