@@ -1,13 +1,38 @@
 {
 	"projects":{
+		"public":{
+			"name":"public",
+			"version":"0.0.1",
+			"status":"online",
+			"pages":{
+				"public":{
+					"html":"index",
+					"css":["normalize.css","foundation.css"],
+					"js":["jquery.js","jquery.tmpl.js","modernizr.js","foundation.js"]
+				}
+			}
+		},
 		"counter":{
 			"name":"counter",
 			"version":"0.0.1",
+			"status":"dev",
 			"pages":{
 				"index":{
 					"html":"index",
 					"css":["index.css"],
 					"js":["arith.js","analy.js","operation.js","page.js","index.js"]
+				}
+			}
+		},
+		"nowkey":{
+			"name":"nowkey",
+			"version":"0.0.0",
+			"status":"new",
+			"pages":{
+				"index":{
+					"html":"index",
+					"css":["index.css"],
+					"js":["page.js","index.js"]
 				}
 			}
 		}

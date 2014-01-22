@@ -3,6 +3,8 @@ init
 npm install -> package.json
 node -> server.js
 grunt -> Gruntfile.js -> config.json -> [ project, path ] 
+
+couchdb -> localhost:5984
 ----
 git add .
 git commit -a -m 'ev1.2'

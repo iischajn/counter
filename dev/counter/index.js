@@ -1,4 +1,4 @@
-/*! 2014-01-20 */
+/*! 2014-01-23 */
 var arith = (function(){
 	function sortByTimes(a, b){
 		return b.times - a.times;

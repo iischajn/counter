@@ -1,0 +1,8 @@
+<%/* 
+head.title
+*/%>
+<ul>
+	<% projects.forEach(function(project){ %>
+		<li><a href="/<%= project.name %>"><%= project.name %></a></li>
+	<% }) %>
+</ul>

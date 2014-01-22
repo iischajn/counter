@@ -1,25 +1,55 @@
 (function(){
+	var fs = require('fs');
+	var path = require('path');
+
+	function readJSON(filepath) {
+		var src = fs.readFileSync(filepath);
+		var result = JSON.parse(src);
+		return result;
+	};
+	var toArray = Function.call.bind(Array.prototype.slice);
+
 	var exp = require("express");
+	var partials = require('express-partials')
+
 	var app = exp();
+	var config = readJSON('config.json');
+	app.use(partials());
 	// var Data = require('./data').Data;
 	// var data = new Data('http://localhost', 5984);
 	// var cradle = require('cradle');
 
 	app.use(exp.bodyParser());
 	app.use(exp.methodOverride());
-	app.use(exp.static(__dirname + '/bulid'));
-	app.engine('.html', require('ejs').__express);
+	app.use(exp.static(__dirname + '/build'));
+	app.engine('.ejs', require('ejs').__express);
 	app.set('views', __dirname + '/views');
-	app.set('view engine', 'html');
+	app.set('view engine', 'ejs');
+	app.set('view options', {defaultLayout:'public/layout'});
+
 
 	app.listen(8888);
 	console.log('Server running at http://localhost:8888/');
 
 	// 渲染页面
 	app.get('/', function(req, res) {
-		res.render("index");  
+		var projects = [];
+		for (var i in config.projects) {
+	        projects.push(config.projects[i]);
+	    };
+		res.render("index",{
+			title:'导航页',
+			projects: projects, 
+			css:[],
+			js:[]
+		});  
 	});
 
+	app.get('*', function(req, res){
+	    res.render('404', {title: 'No Found'});
+	});
+	// app.get('/', routes.index);
+	// app.get('/users', user.list);
 	// 保存word数据
 	// app.post('/save', function(req, res) {
 	// 	// req传参
