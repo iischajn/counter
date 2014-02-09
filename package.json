@@ -14,6 +14,7 @@
     "ejs": "~0.8.5",
     "cradle": "~0.6.6",
     "grunt-contrib-cssmin": "~0.7.0",
-    "express-partials": "~0.2.0"
+    "express-partials": "~0.2.0",
+    "create": "0.0.2"
   }
 }

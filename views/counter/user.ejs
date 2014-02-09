@@ -1,0 +1,10 @@
+<%/* 
+head.title
+*/%>
+<div class="off-canvas-wrap">
+<ul>
+	<% users.forEach(function(user){ %>
+		<li><a href="/<%= user.id %>"><%= user.name %></a></li>
+	<% }) %>
+</ul>
+</div>

@@ -4,8 +4,11 @@
 			"name":"public",
 			"version":"0.0.1",
 			"status":"online",
-			"pages":{
+			"net":{
 				"public":{
+					"type":"html",
+					"status":"online",
+					"route":"index",
 					"html":"index",
 					"css":["normalize.css","foundation.css"],
 					"js":["jquery.js","jquery.tmpl.js","modernizr.js","foundation.js"]
@@ -16,11 +19,32 @@
 			"name":"counter",
 			"version":"0.0.1",
 			"status":"dev",
-			"pages":{
+			"net":{
 				"index":{
+					"type":"html",
+					"status":"online",
+					"route":"index",
 					"html":"index",
 					"css":["index.css"],
 					"js":["arith.js","analy.js","operation.js","page.js","index.js"]
+				},
+				"user":{
+					"type":"html",
+					"status":"online",
+					"route":"user",
+					"html":"user",
+					"css":["user.css"],
+					"js":["user.js"]
+				},
+				"save":{
+					"type":"post",
+					"status":"online",
+					"route":"save"
+				},
+				"load":{
+					"type":"get",
+					"status":"online",
+					"route":"load"
 				}
 			}
 		},
@@ -28,8 +52,10 @@
 			"name":"nowkey",
 			"version":"0.0.0",
 			"status":"new",
-			"pages":{
+			"net":{
 				"index":{
+					"type":"html",
+					"route":"index",
 					"html":"index",
 					"css":["index.css"],
 					"js":["page.js","index.js"]
@@ -38,11 +64,15 @@
 		}
 	},
 	"path":{
+		"static":"static",
 		"build":"build",
 		"dev":"dev",
 		"css":"res/css",
 		"js":"res/js",
 		"views":"views",
-		"public":"public"
+		"server":"server",
+		"route":"route",
+		"public":"public",
+		"layout":"public/layout"
 	}
 }

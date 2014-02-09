@@ -5,14 +5,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><%=title%></title>
-	<link rel="stylesheet" href="public/public.min.css">
+	<link rel="stylesheet" href="/build/public/index.min.css">
 	<% css.forEach(function(url){ %>
 		<link rel="stylesheet" href="<%=url%>">
 	<% }) %>
 </head>
 <body>
 	<%-body%>
-	<script src="public/public.min.js"></script>
+	<script src="/build/public/index.min.js"></script>
 	<% js.forEach(function(url){ %>
 		<script src="<%=url%>"></script>
 	<% }) %>
