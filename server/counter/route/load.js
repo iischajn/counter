@@ -4,16 +4,16 @@
 
 module.exports = function(config, info) {
   var exports = {};
-
-  var Data = require('../../public/data').Data;
-  var data = new Data('http://localhost', 5984);
-
   var route = function(req, res) {
-    var uid = req.param('uid');
-	var words = data.findById('word_lib', uid, function(err, data_words) {
-		console.log("words:" + JSON.stringify(data_words));
-		// TODO 将数据通过模板展示到页面
-	});
+    var mongojs = require('mongojs');
+    var db = mongojs('counter', ['word']);
+    var word_list = null;
+    db.word.find({}, function(err, doc, lastErrorObject){
+      if(!err){
+        word_list = doc;
+      }
+    });
+    res.json(word_list);
   }
   exports.route = route;
   return exports;
