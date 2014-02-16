@@ -15,6 +15,8 @@
     "cradle": "~0.6.6",
     "grunt-contrib-cssmin": "~0.7.0",
     "express-partials": "~0.2.0",
-    "mongojs": "~0.10.0"
+    "mongojs": "~0.10.0",
+    "grunt-create": "~0.1.2",
+    "connect-flash": "~0.1.1"
   }
 }

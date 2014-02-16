@@ -1,17 +1,9 @@
 (function(){
-	var fs = require('fs');
+	require('./public/global');
+
 	var path = require('path');
-
-	function readJSON(filepath) {
-		var src = fs.readFileSync(filepath);
-		var result = JSON.parse(src);
-		return result;
-	};
-	var toArray = Function.call.bind(Array.prototype.slice);
-
 	var exp = require("express");
 	var partials = require('express-partials')
-
 	var app = exp();
 	var config = readJSON('config.json');
 	var way = {
@@ -19,7 +11,8 @@
 		views:config.path.views,
 		layout:config.path.layout
 	};
-	app.use(partials());
+    app.use(partials());
+	app.use(exp.cookieParser());
 	app.use(exp.bodyParser());
 	app.use(exp.methodOverride());
 	app.use(exp.static(way.static));
@@ -28,6 +21,12 @@
 	app.set('view engine', 'ejs');
 	app.set('view options', {defaultLayout:way.layout});
 
+	var mongo_store = require('connect-mongo')(exp);
+
+	app.use(exp.session({
+		secret: 'I_have_a_dream_by_1990',
+		store: new mongo_store({db: 'session'})
+	}));
 
 	app.listen(8888);
 	console.log('Server running at http://localhost:8888/');
@@ -66,16 +65,5 @@
         }
     }
     routeInit();
-
-	// app.get('/public/index', require('./public/route/index')(config).route);
-
-	// app.get('*', function(req, res){
-	//     res.render('404', {title: 'No Found',css:[],js:[]});
-	// });
-	
-
-	// 注册
-	// 登录
-	// 退出
 
 })();

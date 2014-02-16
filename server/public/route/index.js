@@ -8,13 +8,13 @@ module.exports = function(config, info) {
     for (var i in config.projects) {
           projects.push(config.projects[i]);
     }
-    res.render("public/index",{
-     title:'导航页',
-     projects: projects, 
-     css:[],
-     js:[]
+    console.log(res);
+    page.go(res, 'public/index', {
+      title:'导航页',
+      projects: projects
     });
   }
   exports.route = route;
   return exports;
 };
+

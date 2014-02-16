@@ -12,6 +12,11 @@
 					"html":"index",
 					"css":["normalize.css","foundation.css"],
 					"js":["jquery.js","jquery.tmpl.js","modernizr.js","foundation.js"]
+				},
+				"user":{
+					"type":"post",
+					"status":"online",
+					"route":"user"
 				}
 			}
 		},

@@ -1,7 +1,12 @@
-init
+#devDependencies
+
+npm install -g node-gyp
+
+#init
 
 v1.1
 npm install mongodb 
+npm install connect-mongo --save-dev
 
 npm install -> package.json
 grunt -> Gruntfile.js -> config.json -> [ project, path ] 

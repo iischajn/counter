@@ -27,6 +27,11 @@
 //   exports.route = route;
 //   return exports;
 // };
-// var mongojs = require('mongojs');
-// var db = mongojs('counter', ['word']);
+// require('./user.js')
+var mongojs = require('mongojs');
+var user_db = mongojs('user', ['index']);
+user_db.index.findOne({mobile:'1501130',email:'chajn@qq.com',pwd:'123'},function(){
+	console.log(arguments);
+process.exit(1);
+});
 // db.word.remove();
