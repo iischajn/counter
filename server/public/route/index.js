@@ -8,7 +8,6 @@ module.exports = function(config, info) {
     for (var i in config.projects) {
           projects.push(config.projects[i]);
     }
-    console.log(res);
     page.go(res, 'public/index', {
       title:'导航页',
       projects: projects
